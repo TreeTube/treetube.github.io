@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Begrüßungsseite</title>
+  <style>
+    /* CSS-Styling für den roten Knopf */
+    .red-button {
+      background-color: red;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    
+    /* CSS-Styling für den grünen Button */
+    .green-button {
+      background-color: green;
+      color: red;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    
+    /* CSS-Styling für den roten Button */
+    .red-button {
+      background-color: red;
+      color: gold;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    /* CSS-Styling für den Button in der rechten oberen Ecke */
+    .top-right-button {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background-color: blue;
+      color: gold;
+      padding: 5px 10px;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* CSS-Styling für den Dark Mode Button */
+    .dark-mode-button {
+      position: fixed;
+      top: 50%;
+      right: 10px;
+      background-color: black;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* CSS-Styling für den Dark Mode */
+    body.dark-mode {
+      background-color: #333;
+      color: white;
+    }
+  </style>
+  <script>
+    function toggleDarkMode() {
+      const body = document.body;
+      body.classList.toggle("dark-mode");
+https://cdn.discordapp.com/attachments/1129811961077567498/1130541360454320158/image.png
+  </script>
+</head>
+<body>
+  <h1>Willkommen auf meiner Website!</h1>
+  <h4>Ich hoffe, es gefällt dir hier!</h4>
+  <a class="red-button" href="https://www.youtube.com/channel/UCc_0LhXi-eJxB7tACTiprig">Mein Kanal</a>
+  <a class="top-right-button" href="list.html">Liste</a>
+  <a class="green-button" href="TreeTube.html">TreeTube</a>
+  <button class="dark-mode-button" onclick="toggleDarkMode()">Toggle Lightmodes</button>
+</body>
+</html>
