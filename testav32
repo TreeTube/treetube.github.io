@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bearbeitbare Seite</title>
+<style>
+  /* Stil für den Bearbeiten-Button */
+  #editButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+</style>
+</head>
+<body>
+  <h1>Willkommen auf dieser Seite</h1>
+  <p>Dies ist der Inhalt der Seite, den Benutzer bearbeiten können.</p>
+  
+  <!-- Bearbeiten-Button -->
+  <button id="editButton">Seite bearbeiten</button>
+
+  <!-- Skript für den Bearbeiten-Button -->
+  <script>
+    // Funktion, die aufgerufen wird, wenn der Button geklickt wird
+    function openEditor() {
+      alert("Hier kannst du den Bearbeitungsmodus starten oder eine entsprechende Funktion aufrufen.");
+      // Hier könntest du eine Modalfenster öffnen, das den Bearbeitungsmodus ermöglicht.
+      // Du könntest auch eine Weiterleitung zu einer anderen Seite vornehmen, auf der die Bearbeitung stattfindet.
+    }
+
+    // Den Button mit der Funktion verknüpfen
+    var editButton = document.getElementById("editButton");
+    editButton.addEventListener("click", openEditor);
+  </script>
+</body>
+</html>
