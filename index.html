@@ -10,11 +10,26 @@
       padding: 0;
       font-family: Arial, sans-serif;
       transition: background-color 0.3s, color 0.3s;
+      animation: gradientBG 10s ease infinite;
+      background-size: 200% 200%;
+    }
+
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
     }
 
     /* Hintergrund */
     body {
-      background-color: #f2f2f2;
+      background: linear-gradient(45deg, #FF5252, #66BB6A, #1976D2);
+      background-size: 200% 200%;
     }
 
     /* Überschriften */
@@ -57,7 +72,7 @@
 
     /* Dark Mode */
     body.dark-mode {
-      background-color: #111;
+      background: linear-gradient(45deg, #111, #333, #444);
       color: #ddd;
     }
   </style>
