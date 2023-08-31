@@ -79,14 +79,25 @@
       const body = document.body;
       body.classList.toggle("dark-mode");
     }
+    
+    function copyServerIP() {
+      const serverIP = "eu5441539.g-portal.game";
+      const tempInput = document.createElement("input");
+      document.body.appendChild(tempInput);
+      tempInput.setAttribute("value", serverIP);
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+      alert("Server IP copied: " + serverIP);
+    }
   </script>
 </head>
 <body>
   <h1>Welcome to AxoSMP Minecraft Server!</h1>
   <h4>Join us and explore new adventures.</h4>
-  <p>Server IP: eu5441539.g-portal.game</p>
-  <a class="button red-button" href="eu5441539.g-portal.game">Connect to Server</a>
+  <button class="button green-button" onclick="copyServerIP()">Copy Server IP</button>
+  <p>Connect to the server:</p>
+  <a class="button red-button" href="eu5441539.g-portal.game">Connect</a>
   <button class="bottom-right-button" onclick="toggleDarkMode()">Toggle Dark Mode</button>
 </body>
 </html>
-
