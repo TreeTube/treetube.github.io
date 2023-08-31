@@ -4,78 +4,86 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TreeTube Hub</title>
   <style>
-    /* CSS-Styling für den roten Knopf */
-    .red-button {
-      background-color: red;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    
-    /* CSS-Styling für den grünen Button */
-    .green-button {
-      background-color: green;
-      color: red;
-      padding: 10px 20px;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    
-    /* CSS-Styling für den roten Button */
-    .red-button {
-      background-color: red;
-      color: gold;
-      padding: 10px 20px;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
+    /* Globales Styling */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      transition: background-color 0.3s, color 0.3s;
     }
 
-    /* CSS-Styling für den Button in der rechten oberen Ecke */
+    /* Hintergrund */
+    body {
+      background-color: #f2f2f2;
+    }
+
+    /* Überschriften */
+    h1, h4 {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    /* Button-Styling */
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .red-button {
+      background-color: #ff5252;
+      color: white;
+    }
+
+    .green-button {
+      background-color: #66bb6a;
+      color: white;
+    }
+
+    /* Button in der rechten oberen Ecke */
     .top-right-button {
       position: fixed;
       top: 10px;
       right: 10px;
-      background-color: blue;
-      color: gold;
+      background-color: #1976d2;
+      color: white;
       padding: 5px 10px;
-      border: none;
-      cursor: pointer;
     }
 
-    /* CSS-Styling für den Dark Mode Button */
+    /* Dark Mode Button */
     .dark-mode-button {
       position: fixed;
       top: 50%;
       right: 10px;
-      background-color: black;
-      color: white;
-      padding: 10px;
-      border: none;
-      cursor: pointer;
-    }
-
-    /* CSS-Styling für den Dark Mode */
-    body.dark-mode {
       background-color: #333;
       color: white;
+      padding: 10px;
+    }
+
+    /* Dark Mode */
+    body.dark-mode {
+      background-color: #111;
+      color: #ddd;
     }
   </style>
   <script>
     function toggleDarkMode() {
       const body = document.body;
       body.classList.toggle("dark-mode");
-https://cdn.discordapp.com/attachments/1129811961077567498/1130541360454320158/image.png
+    }
   </script>
 </head>
 <body>
-  <h1>Welcome to TreeTube!</h1>
-  <h4>A Nice stay!</h4>
-  <a class="red-button" href="axosmp.html">AxoSMP Minecraft Server</a>
-  <a class="green-button" href="TreeTube.html">TreeTube</a>
-  <button class="dark-mode-button" onclick="toggleDarkMode()">Toggle Lightmodes</button>
+  <button class="top-right-button" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+  <h1>Welcome to TreeTube Hub!</h1>
+  <h4>Enjoy your stay!</h4>
+  <a class="button red-button" href="axosmp.html">AxoSMP Minecraft Server</a>
+  <a class="button green-button" href="TreeTube.html">TreeTube</a>
+  <button class="dark-mode-button" onclick="toggleDarkMode()">Toggle Dark Mode</button>
 </body>
 </html>
