@@ -73,6 +73,21 @@
       color: white;
       padding: 5px 10px;
     }
+
+    /* Minecraft Erdblock-Styling */
+    .minecraft-block {
+      display: inline-block;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      background-color: #6a4825;
+      color: white;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 18px;
+    }
   </style>
   <script>
     function toggleDarkMode() {
@@ -95,9 +110,7 @@
 <body>
   <h1>Welcome to AxoSMP Minecraft Server!</h1>
   <h4>Join us and explore new adventures.</h4>
-  <button class="button green-button" onclick="copyServerIP()">Copy Server IP</button>
-  <p>Connect to the server:</p>
-  <a class="button red-button" href="eu5441539.g-portal.game">Connect</a>
+  <div class="minecraft-block" onclick="copyServerIP()">Copy Server IP</div>
   <button class="bottom-right-button" onclick="toggleDarkMode()">Toggle Dark Mode</button>
 </body>
 </html>
