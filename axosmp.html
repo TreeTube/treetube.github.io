@@ -76,12 +76,17 @@
 
     /* Minecraft Grasblock-Styling */
     .minecraft-grass {
-      display: inline-block;
-      width: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 160px;
       height: 40px;
       background-color: #6a4825;
       border-top: 10px solid #3b6d34;
+      border-radius: 5px;
       cursor: pointer;
+      font-weight: bold;
+      color: white;
     }
   </style>
   <script>
@@ -105,7 +110,7 @@
 <body>
   <h1>Welcome to AxoSMP Minecraft Server!</h1>
   <h4>Join us and explore new adventures.</h4>
-  <div class="minecraft-grass" onclick="copyServerIP()"></div>
+  <div class="minecraft-grass" onclick="copyServerIP()">Copy Server IP</div>
   <button class="bottom-right-button" onclick="toggleDarkMode()">Toggle Dark Mode</button>
 </body>
 </html>
