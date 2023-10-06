@@ -1,0 +1,6 @@
+Let's make a game!
+  name:Axo Clicker
+  by:AxoMan
+  desc:This is the best Clicker game, where u click Axolotls!
+  created:6.10.2023, 23:54
+  version:0.0
