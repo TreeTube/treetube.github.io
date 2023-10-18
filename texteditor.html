@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Textformatierung und als .txt herunterladen</title>
+    <title>Formatierten Text als .txt herunterladen</title>
     <style>
-        #textArea {
+        #formattedText {
             font-size: 16px;
             font-weight: normal;
             font-style: normal;
@@ -11,7 +11,7 @@
     </style>
 </head>
 <body>
-    <h1>Textformatierung und als .txt herunterladen</h1>
+    <h1>Formatierten Text als .txt herunterladen</h1>
     <label for="fontSize">Textgröße:</label>
     <input type="number" id="fontSize" min="10" max="72" step="1" value="16">
     <label for="bold">Fett:</label>
@@ -19,20 +19,24 @@
     <label for="italic">Kursiv:</label>
     <input type="checkbox" id="italic">
     <br>
-    <textarea id="textArea" rows="10" cols="50"></textarea>
+    <div id="formattedText" contenteditable="true" rows="10" cols="50"></div>
     <br>
     <button onclick="downloadText()">Als .txt herunterladen</button>
 
     <script>
         function downloadText() {
-            var text = document.getElementById("textArea").value;
+            var formattedText = document.getElementById("formattedText").innerHTML;
             var fontSize = document.getElementById("fontSize").value + "px";
             var isBold = document.getElementById("bold").checked ? "bold" : "normal";
             var isItalic = document.getElementById("italic").checked ? "italic" : "normal";
 
-            var formattedText = "<div style='font-size:" + fontSize + "; font-weight:" + isBold + "; font-style:" + isItalic + "'>" + text + "</div>";
+            var cssStyle = `
+                font-size: ${fontSize};
+                font-weight: ${isBold};
+                font-style: ${isItalic};
+            `;
 
-            var blob = new Blob([formattedText], { type: "text/plain" });
+            var blob = new Blob([formattedText], { type: "text/plain;charset=utf-8" });
             var a = document.createElement("a");
             a.href = URL.createObjectURL(blob);
             a.download = "formatted_text.txt";
