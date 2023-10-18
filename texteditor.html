@@ -2,13 +2,6 @@
 <html>
 <head>
     <title>Formatierten Text als .txt herunterladen</title>
-    <style>
-        #formattedText {
-            font-size: 16px;
-            font-weight: normal;
-            font-style: normal;
-        }
-    </style>
 </head>
 <body>
     <h1>Formatierten Text als .txt herunterladen</h1>
@@ -19,24 +12,22 @@
     <label for="italic">Kursiv:</label>
     <input type="checkbox" id="italic">
     <br>
-    <div id="formattedText" contenteditable="true" rows="10" cols="50"></div>
+    <textarea id="textInput" rows="10" cols="50"></textarea>
     <br>
-    <button onclick="downloadText()">Als .txt herunterladen</button>
+    <button onclick="formatAndDownloadText()">Als .txt herunterladen</button>
 
     <script>
-        function downloadText() {
-            var formattedText = document.getElementById("formattedText").innerHTML;
+        function formatAndDownloadText() {
+            var text = document.getElementById("textInput").value;
             var fontSize = document.getElementById("fontSize").value + "px";
             var isBold = document.getElementById("bold").checked ? "bold" : "normal";
             var isItalic = document.getElementById("italic").checked ? "italic" : "normal";
 
-            var cssStyle = `
-                font-size: ${fontSize};
-                font-weight: ${isBold};
-                font-style: ${isItalic};
+            var formattedText = `
+                <div style="font-size:${fontSize}; font-weight:${isBold}; font-style:${isItalic};">${text}</div>
             `;
 
-            var blob = new Blob([formattedText], { type: "text/plain;charset=utf-8" });
+            var blob = new Blob([formattedText], { type: "text/html" });
             var a = document.createElement("a");
             a.href = URL.createObjectURL(blob);
             a.download = "formatted_text.txt";
