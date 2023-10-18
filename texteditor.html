@@ -1,41 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Formatierten Text als .txt herunterladen</title>
+    <title>Formatierten Text als .docx herunterladen</title>
 </head>
 <body>
-    <h1>Formatierten Text als .txt herunterladen</h1>
-    <label for="fontSize">Textgröße:</label>
-    <input type="number" id="fontSize" min="10" max="72" step="1" value="16">
-    <label for="bold">Fett:</label>
-    <input type="checkbox" id="bold">
-    <label for="italic">Kursiv:</label>
-    <input type="checkbox" id="italic">
-    <br>
-    <textarea id="textInput" rows="10" cols="50"></textarea>
-    <br>
-    <button onclick="formatAndDownloadText()">Als .txt herunterladen</button>
-
-    <script>
-        function formatAndDownloadText() {
-            var text = document.getElementById("textInput").value;
-            var fontSize = document.getElementById("fontSize").value + "px";
-            var isBold = document.getElementById("bold").checked ? "bold" : "normal";
-            var isItalic = document.getElementById("italic").checked ? "italic" : "normal";
-
-            var formattedText = `
-                <div style="font-size:${fontSize}; font-weight:${isBold}; font-style:${isItalic};">${text}</div>
-            `;
-
-            var blob = new Blob([formattedText], { type: "text/html" });
-            var a = document.createElement("a");
-            a.href = URL.createObjectURL(blob);
-            a.download = "formatted_text.txt";
-            a.style.display = "none";
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-        }
-    </script>
+    <h1>Formatierten Text als .docx herunterladen</h1>
+    <form method="post" action="generate_docx.php">
+        <label for="fontSize">Textgröße:</label>
+        <input type="number" name="fontSize" min="10" max="72" step="1" value="16">
+        <label for="bold">Fett:</label>
+        <input type="checkbox" name="bold">
+        <label for="italic">Kursiv:</label>
+        <input type="checkbox" name="italic">
+        <br>
+        <textarea name="textInput" rows="10" cols="50"></textarea>
+        <br>
+        <button type="submit">Als .docx herunterladen</button>
+    </form>
 </body>
 </html>
